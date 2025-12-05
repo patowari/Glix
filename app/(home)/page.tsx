@@ -1,4 +1,4 @@
-import Hero from '@/lib/components/Hero';
+import Hero from './(hero)/Hero';
 import ComparisonSection from '@/lib/components/ComparisonSection';
 import Features from '@/lib/components/Features';
 import SocialProof from '@/lib/components/SocialProof';
@@ -16,26 +16,32 @@ import BusinessTypes from '@/lib/components/BusinessTypes';
 
 import React from 'react';
 
-const Home: React.FC = () => {
-    return (
-        <>
-            <Hero/>
-            <SocialProof/>
-            <ProblemSolution/>
-            <ComparisonSection/>
-            <GlobalScale/>
-            <BusinessTypes/>
-            <TrustLayer/>
-            <MarketTicker/>
-            <Ecosystem/>
-            <Solutions/>
-            <HowItWorks/>
-            <WhyChooseUs/>
-            <Features/>
-            <RevenueCalculator/>
-            <TrustSignals/>
-        </>
-    );
-};
+export default function Home() {
+    return <>
+        <Hero/>
 
-export default Home;
+        {/**
+         * todo: the below components needs to be refactored by isolating their
+         * client-rendered sub components into separated client component files
+         * and remove "use client" directives at the top of each root component
+         * file. More detailed reasoning and explanation can be found in
+         * ./(hero)/Hero.tsx or the Next.js docs
+         *
+         * @author Quang Cap
+         */}
+        <SocialProof/>
+        <ProblemSolution/>
+        <ComparisonSection/>
+        <GlobalScale/>
+        <BusinessTypes/>
+        <TrustLayer/>
+        <MarketTicker/>
+        <Ecosystem/>
+        <Solutions/>
+        <HowItWorks/>
+        <WhyChooseUs/>
+        <Features/>
+        <RevenueCalculator/>
+        <TrustSignals/>
+    </>
+}
